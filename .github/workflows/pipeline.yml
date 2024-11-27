@@ -19,6 +19,8 @@ jobs:
       URL: ${{ secrets.URL }}
       USERNAME: ${{ secrets.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
+      INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
+      SECRET: ${{ secrets.SECRET }}
       CI: "true"
 
     steps:
@@ -75,6 +77,8 @@ jobs:
           BASE_URL: ${{ secrets.URL }}
           USERNAME: ${{ secrets.USERNAME }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
+          SECRET: ${{ secrets.SECRET }}
           CI: "true"
         continue-on-error: true
 
