@@ -1,11 +1,5 @@
 Feature: Login Page Testing
 
-  Scenario: Successful account creation 
-    Given I am on the login page
-    When I click create account link
-    And I enter all details in form
-    Then I see account creation message on next page
-
   Scenario: Successful login with "Remember Me" checked
     Given I am on the login page
     When I enter a valid email
@@ -40,3 +34,9 @@ Feature: Login Page Testing
     Then I enter a valid email address
     And I click the send button
     Then I should see a confirmation message
+
+  Scenario: Successful account creation 
+    Given I am on the login page
+    When I click create account link
+    And I enter all details in form
+    Then I see account creation message on next page
