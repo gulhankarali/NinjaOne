@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2695600833
+              "duration": 2773765416
             }
           },
           {
@@ -23,11 +23,11 @@
             "line": 4,
             "name": "I am on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:9"
+              "location": "src/steps/loginPageTests.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 4752774667
+              "duration": 4730296750
             }
           },
           {
@@ -36,11 +36,11 @@
             "line": 5,
             "name": "I click create account link",
             "match": {
-              "location": "src/steps/loginPageTests.ts:46"
+              "location": "src/steps/loginPageTests.ts:52"
             },
             "result": {
               "status": "passed",
-              "duration": 3157599125
+              "duration": 3124883041
             }
           },
           {
@@ -49,11 +49,11 @@
             "line": 6,
             "name": "I enter all details in form",
             "match": {
-              "location": "src/steps/loginPageTests.ts:50"
+              "location": "src/steps/loginPageTests.ts:58"
             },
             "result": {
               "status": "passed",
-              "duration": 125486666
+              "duration": 166649333
             }
           },
           {
@@ -62,11 +62,11 @@
             "line": 7,
             "name": "I see account creation message on next page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:63"
+              "location": "src/steps/loginPageTests.ts:73"
             },
             "result": {
               "status": "passed",
-              "duration": 3015491625
+              "duration": 3024956083
             }
           },
           {
@@ -74,7 +74,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 107426959
+              "duration": 112386374
             }
           }
         ],
@@ -93,7 +93,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2693495791
+              "duration": 2741850042
             }
           },
           {
@@ -102,11 +102,11 @@
             "line": 10,
             "name": "I am on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:9"
+              "location": "src/steps/loginPageTests.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 4752073957
+              "duration": 4759258542
             }
           },
           {
@@ -115,11 +115,11 @@
             "line": 11,
             "name": "I enter a valid email",
             "match": {
-              "location": "src/steps/loginPageTests.ts:26"
+              "location": "src/steps/loginPageTests.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 3057477333
+              "duration": 3071607666
             }
           },
           {
@@ -128,11 +128,11 @@
             "line": 12,
             "name": "I enter a valid password",
             "match": {
-              "location": "src/steps/loginPageTests.ts:30"
+              "location": "src/steps/loginPageTests.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 3014196000
+              "duration": 3070756042
             }
           },
           {
@@ -141,11 +141,11 @@
             "line": 13,
             "name": "I check keep me signed in checkbox",
             "match": {
-              "location": "src/steps/loginPageTests.ts:68"
+              "location": "src/steps/loginPageTests.ts:79"
             },
             "result": {
               "status": "passed",
-              "duration": 3077298916
+              "duration": 3063791958
             }
           },
           {
@@ -154,11 +154,11 @@
             "line": 14,
             "name": "I click submit button",
             "match": {
-              "location": "src/steps/loginPageTests.ts:38"
+              "location": "src/steps/loginPageTests.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 3055962583
+              "duration": 3056022166
             }
           },
           {
@@ -171,7 +171,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9078026958
+              "duration": 28109619540
             }
           },
           {
@@ -180,11 +180,11 @@
             "line": 16,
             "name": "I should be logged into the application successfully",
             "match": {
-              "location": "src/steps/loginPageTests.ts:42"
+              "location": "src/steps/loginPageTests.ts:47"
             },
             "result": {
               "status": "passed",
-              "duration": 3039275500
+              "duration": 3038001499
             }
           },
           {
@@ -193,11 +193,11 @@
             "line": 17,
             "name": "I close and open browser",
             "match": {
-              "location": "src/steps/loginPageTests.ts:72"
+              "location": "src/steps/loginPageTests.ts:84"
             },
             "result": {
               "status": "passed",
-              "duration": 3069686792
+              "duration": 3094073416
             }
           },
           {
@@ -206,11 +206,11 @@
             "line": 18,
             "name": "I should remain logged in after closing and reopening the browser",
             "match": {
-              "location": "src/steps/loginPageTests.ts:78"
+              "location": "src/steps/loginPageTests.ts:91"
             },
             "result": {
               "status": "passed",
-              "duration": 3024088458
+              "duration": 3026810416
             }
           },
           {
@@ -218,7 +218,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 98526624
+              "duration": 134132375
             }
           }
         ],
@@ -227,17 +227,17 @@
       },
       {
         "description": "",
-        "id": "login-page-testing;login-fails-with-an-invalid-email",
+        "id": "login-page-testing;login-fails-with-an-invalid-email-(negative-test)",
         "keyword": "Scenario",
         "line": 20,
-        "name": "Login fails with an invalid email",
+        "name": "Login fails with an invalid email (negative test)",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 746766166
+              "duration": 822437624
             }
           },
           {
@@ -246,11 +246,11 @@
             "line": 21,
             "name": "I am on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:9"
+              "location": "src/steps/loginPageTests.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 4695444333
+              "duration": 4781456624
             }
           },
           {
@@ -259,11 +259,11 @@
             "line": 22,
             "name": "I enter an invalid email",
             "match": {
-              "location": "src/steps/loginPageTests.ts:82"
+              "location": "src/steps/loginPageTests.ts:97"
             },
             "result": {
               "status": "passed",
-              "duration": 3048497874
+              "duration": 3046896040
             }
           },
           {
@@ -272,11 +272,11 @@
             "line": 23,
             "name": "I enter a valid password",
             "match": {
-              "location": "src/steps/loginPageTests.ts:30"
+              "location": "src/steps/loginPageTests.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 3079637959
+              "duration": 3021928375
             }
           },
           {
@@ -285,11 +285,11 @@
             "line": 24,
             "name": "I click submit button",
             "match": {
-              "location": "src/steps/loginPageTests.ts:38"
+              "location": "src/steps/loginPageTests.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 3060069916
+              "duration": 3048299875
             }
           },
           {
@@ -298,11 +298,11 @@
             "line": 25,
             "name": "I should see an error message",
             "match": {
-              "location": "src/steps/loginPageTests.ts:86"
+              "location": "src/steps/loginPageTests.ts:103"
             },
             "result": {
               "status": "passed",
-              "duration": 3008145333
+              "duration": 3012361291
             }
           },
           {
@@ -311,11 +311,11 @@
             "line": 26,
             "name": "I should remain on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:93"
+              "location": "src/steps/loginPageTests.ts:111"
             },
             "result": {
               "status": "passed",
-              "duration": 3017858415
+              "duration": 3005897958
             }
           },
           {
@@ -323,7 +323,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 136399458
+              "duration": 237100415
             }
           }
         ],
@@ -342,7 +342,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 788106333
+              "duration": 1468472458
             }
           },
           {
@@ -351,11 +351,11 @@
             "line": 29,
             "name": "I am on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:9"
+              "location": "src/steps/loginPageTests.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 4677786582
+              "duration": 4763476625
             }
           },
           {
@@ -364,11 +364,11 @@
             "line": 30,
             "name": "I enter a valid email",
             "match": {
-              "location": "src/steps/loginPageTests.ts:26"
+              "location": "src/steps/loginPageTests.ts:27"
             },
             "result": {
               "status": "passed",
-              "duration": 3068212125
+              "duration": 3069883584
             }
           },
           {
@@ -377,11 +377,11 @@
             "line": 31,
             "name": "I enter a valid password",
             "match": {
-              "location": "src/steps/loginPageTests.ts:30"
+              "location": "src/steps/loginPageTests.ts:32"
             },
             "result": {
               "status": "passed",
-              "duration": 3017396999
+              "duration": 3079873416
             }
           },
           {
@@ -390,11 +390,11 @@
             "line": 32,
             "name": "I click submit button",
             "match": {
-              "location": "src/steps/loginPageTests.ts:38"
+              "location": "src/steps/loginPageTests.ts:42"
             },
             "result": {
               "status": "passed",
-              "duration": 3058898124
+              "duration": 3044609457
             }
           },
           {
@@ -407,7 +407,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9112311041
+              "duration": 27094344792
             }
           },
           {
@@ -416,11 +416,11 @@
             "line": 34,
             "name": "I should be logged into the application successfully",
             "match": {
-              "location": "src/steps/loginPageTests.ts:42"
+              "location": "src/steps/loginPageTests.ts:47"
             },
             "result": {
               "status": "passed",
-              "duration": 3900659291
+              "duration": 3036927290
             }
           },
           {
@@ -428,7 +428,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 88849625
+              "duration": 119155791
             }
           }
         ],
@@ -437,17 +437,17 @@
       },
       {
         "description": "",
-        "id": "login-page-testing;reset-password-with-valid-email",
+        "id": "login-page-testing;succesful-reset-password-with-valid-email",
         "keyword": "Scenario",
         "line": 36,
-        "name": "Reset password with valid email",
+        "name": "Succesful reset password with valid email",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 528984791
+              "duration": 961955832
             }
           },
           {
@@ -456,11 +456,11 @@
             "line": 37,
             "name": "I am on the login page",
             "match": {
-              "location": "src/steps/loginPageTests.ts:9"
+              "location": "src/steps/loginPageTests.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 4690708291
+              "duration": 4704989415
             }
           },
           {
@@ -469,11 +469,11 @@
             "line": 38,
             "name": "I click the forgot your password link",
             "match": {
-              "location": "src/steps/loginPageTests.ts:98"
+              "location": "src/steps/loginPageTests.ts:117"
             },
             "result": {
               "status": "passed",
-              "duration": 3142920625
+              "duration": 3119719583
             }
           },
           {
@@ -482,11 +482,11 @@
             "line": 39,
             "name": "I choose email as a way of verification",
             "match": {
-              "location": "src/steps/loginPageTests.ts:102"
+              "location": "src/steps/loginPageTests.ts:123"
             },
             "result": {
               "status": "passed",
-              "duration": 3091430958
+              "duration": 3085766041
             }
           },
           {
@@ -495,11 +495,11 @@
             "line": 40,
             "name": "I enter a valid email address",
             "match": {
-              "location": "src/steps/loginPageTests.ts:106"
+              "location": "src/steps/loginPageTests.ts:129"
             },
             "result": {
               "status": "passed",
-              "duration": 3029986375
+              "duration": 3029379958
             }
           },
           {
@@ -508,11 +508,11 @@
             "line": 41,
             "name": "I click the send button",
             "match": {
-              "location": "src/steps/loginPageTests.ts:110"
+              "location": "src/steps/loginPageTests.ts:134"
             },
             "result": {
               "status": "passed",
-              "duration": 3070125624
+              "duration": 3049589957
             }
           },
           {
@@ -521,11 +521,11 @@
             "line": 42,
             "name": "I should see a confirmation message",
             "match": {
-              "location": "src/steps/loginPageTests.ts:114"
+              "location": "src/steps/loginPageTests.ts:139"
             },
             "result": {
               "status": "passed",
-              "duration": 3015742415
+              "duration": 3012358250
             }
           },
           {
@@ -533,7 +533,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 77466624
+              "duration": 108796958
             }
           }
         ],
