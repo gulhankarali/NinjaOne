@@ -54,7 +54,9 @@ jobs:
           npm_version: ${{ env.npm_version }}
 
       - name: Install test dependencies
-        run: npm install --frozen-lockfile
+        run: |
+          npm install --frozen-lockfile
+          npm install -D @cucumber/pretty-formatter
 
       - name: Install system dependencies
         run: |
