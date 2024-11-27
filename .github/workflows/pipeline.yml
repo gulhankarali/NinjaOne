@@ -180,6 +180,9 @@ jobs:
 
       - name: Run Playwright Tests
         run: |
+          mkdir -p playwright-report
+          mkdir -p reports
+          
           npx cucumber-js \
             --format json:reports/cucumber-report.json \
             --format html:reports/cucumber-report.html \
