@@ -5,7 +5,7 @@ import fs from "fs";
 import { initElements } from "../../globalSetup";
 
 const BROWSER_TYPE: string = "chrome";
-const HEADLESS_MODE: boolean = false;
+const HEADLESS_MODE: boolean = true;
 const MAXIMIZED_WINDOW: boolean = true;
 const SLOW_MOTION_DELAY: number = 0;
 const DEFAULT_TIMEOUT: number = 30000;
