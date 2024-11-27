@@ -71,7 +71,7 @@ import { FakerHelper } from "../helpers/fakerHelper";
 
   
   Then('I see account creation message on next page', async function () {
-      await new Promise(resolve => setTimeout(resolve, 5000))
+      await new Promise(resolve => setTimeout(resolve, 10000))
       const successMessage = await registerPage.accountSuccessMessage.textContent(); 
       expect(successMessage?.trim()).toContain("Account successfully created. Please check your email to activate your account."); 
   });
