@@ -71,7 +71,7 @@ import { TIMEOUT } from "dns";
     });
 
   
-  Then('I see account creation message on next page', { TIMEOUT: 6000 }, async function () {
+  Then('I see account creation message on next page', { timeout : 10000 }, async function () {
       await new Promise(resolve => setTimeout(resolve, 3000))
       const successMessage = await registerPage.accountSuccessMessage.textContent(); 
       expect(successMessage?.trim()).toContain("Account successfully created. Please check your email to activate your account."); 
