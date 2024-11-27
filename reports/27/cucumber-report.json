@@ -1,0 +1,552 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-page-testing;successful-login-with-\"remember-me\"-checked",
+        "keyword": "Scenario",
+        "line": 9,
+        "name": "Successful login with \"Remember Me\" checked",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 812122809
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 10,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4443185735
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 11,
+            "name": "I enter a valid email",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3034498605
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I enter a valid password",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3013331668
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I check keep me signed in checkbox",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3022868341
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click submit button",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3032558188
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter valid MFA code on MFA page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16057575431
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "I should be logged into the application successfully",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3021275336
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I close and open browser",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:85"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3085483234
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I should remain logged in after closing and reopening the browser",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:92"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3015117306
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 30717037
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-testing;successful-account-creation",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful account creation",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 92084659
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4134595697
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 5,
+            "name": "I click create account link",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3078343469
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 6,
+            "name": "I enter all details in form",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 149627787
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I see account creation message on next page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:74"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 10000699638,
+              "error_message": "Error: function timed out, ensure the promise resolves within 10000 milliseconds\n    at Timeout.<anonymous> (/home/runner/work/NinjaOne/NinjaOne/node_modules/@cucumber/cucumber/src/time.ts:52:14)\n    at listOnTimeout (node:internal/timers:581:17)\n    at processTimers (node:internal/timers:519:7)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 93711195
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-testing;login-fails-with-an-invalid-email-(negative-test)",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Login fails with an invalid email (negative test)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 86009196
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 21,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4142738471
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "I enter an invalid email",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:98"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3024660326
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "I enter a valid password",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3010727062
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "I click submit button",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3021772166
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 25,
+            "name": "I should see an error message",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:104"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3006733161
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 26,
+            "name": "I should remain on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:112"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3001342302
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 22533921
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-testing;successful-login-with-valid-email-and-password",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "Successful login with valid email and password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 83868935
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4122636542
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I enter a valid email",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3023881725
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I enter a valid password",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3010482982
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "I click submit button",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3041383153
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 33,
+            "name": "I enter valid MFA code on MFA page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27057072767
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 34,
+            "name": "I should be logged into the application successfully",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3020177079
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 37685380
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-testing;succesful-reset-password-with-valid-email",
+        "keyword": "Scenario",
+        "line": 36,
+        "name": "Succesful reset password with valid email",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 82776399
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 37,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4161977012
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 38,
+            "name": "I click the forgot your password link",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:118"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3051565675
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 39,
+            "name": "I choose email as a way of verification",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:124"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3065488603
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 40,
+            "name": "I enter a valid email address",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:130"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3012525936
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 41,
+            "name": "I click the send button",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:135"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3073175328
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 42,
+            "name": "I should see a confirmation message",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:140"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3003941122
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21260136
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-page-testing",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login Page Testing",
+    "tags": [],
+    "uri": "src/features/loginPage.feature"
+  }
+]
