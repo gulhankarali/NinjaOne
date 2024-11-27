@@ -70,11 +70,8 @@ export class RegisterPage extends BasePage{
     public readonly accountSuccessMessage: Locator 
   = this.page.locator('p.css-bk160n.e1qlhcgt2');
 
-    public async getAccountSuccessMessageText(): Promise<string> {
-    const textContent = await this.accountSuccessMessage.textContent();
-    if (textContent === null) {
-      throw new Error('Account success message not found or has no text.');
+    public async getAccountSuccessMessageText() {
+      const textContent = await this.accountSuccessMessage.textContent();
+      return textContent;
     }
-    return textContent;
-  }
 }
