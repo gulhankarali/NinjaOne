@@ -48,6 +48,9 @@ jobs:
       - name: Install test dependencies
         run: npm install --frozen-lockfile
 
+      - name: Install Playwright Browsers
+        run: npx playwright install
+
       - name: Run Playwright Tests
         run: |
           mkdir -p junit-test-results
