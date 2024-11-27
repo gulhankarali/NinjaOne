@@ -19,6 +19,7 @@ jobs:
       npm_version: 9.5.0
       node_version: 20.x
       URL: ${{ secrets.URL }}
+      BROWSER_TYPE: ${{ secrets.BROWSER_TYPE }}
       USERNAME: ${{ secrets.USERNAME }}
       PASSWORD: ${{ secrets.PASSWORD }}
       INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}

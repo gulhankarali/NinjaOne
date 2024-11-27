@@ -14,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2318641916
+              "duration": 2549323040
             }
           },
           {
@@ -27,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4781804041
+              "duration": 4927010499
             }
           },
           {
@@ -40,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3058870834
+              "duration": 3152018707
             }
           },
           {
@@ -53,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3074309165
+              "duration": 3054385167
             }
           },
           {
@@ -66,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3072199959
+              "duration": 3072777791
             }
           },
           {
@@ -79,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3021118834
+              "duration": 3012268666
             }
           },
           {
@@ -92,7 +92,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3006160166
+              "duration": 3011077958
             }
           },
           {
@@ -100,7 +100,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 88157290
+              "duration": 387300957
             }
           }
         ],
@@ -119,7 +119,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2318610584
+              "duration": 2368962958
             }
           },
           {
@@ -132,7 +132,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4781776290
+              "duration": 5224410916
             }
           },
           {
@@ -145,7 +145,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3058845790
+              "duration": 3057287374
             }
           },
           {
@@ -158,7 +158,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3076095750
+              "duration": 3053849250
             }
           },
           {
@@ -171,7 +171,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3074216666
+              "duration": 3077066457
             }
           },
           {
@@ -184,7 +184,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3060435582
+              "duration": 3073305249
             }
           },
           {
@@ -197,7 +197,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 10091006291
+              "duration": 28116761125
             }
           },
           {
@@ -209,8 +209,9 @@
               "location": "src/steps/loginPageTests.ts:48"
             },
             "result": {
-              "status": "passed",
-              "duration": 3039050874
+              "status": "failed",
+              "duration": 8076519750,
+              "error_message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveTitle\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nLocator: locator(':root')\nExpected string: \u001b[32m\"\u001b[7mGet started | \u001b[27mNinjaOne\"\u001b[39m\nReceived string: \u001b[31m\"NinjaOne\"\u001b[39m\nCall log:\n\u001b[2m  - locator._expect with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':root')\u001b[22m\n\u001b[2m    9 × locator resolved to <html lang=\"en\">…</html>\u001b[22m\n\u001b[2m      - unexpected value \"NinjaOne\"\u001b[22m\n\n    at Proxy.<anonymous> (/Users/gulhankarali/NinjaOne/node_modules/playwright/lib/matchers/expect.js:227:37)\n    at CustomWorld.<anonymous> (/Users/gulhankarali/NinjaOne/src/steps/loginPageTests.ts:50:29)"
             }
           },
           {
@@ -222,8 +223,8 @@
               "location": "src/steps/loginPageTests.ts:84"
             },
             "result": {
-              "status": "passed",
-              "duration": 3082226749
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -235,8 +236,8 @@
               "location": "src/steps/loginPageTests.ts:91"
             },
             "result": {
-              "status": "passed",
-              "duration": 3032548207
+              "status": "skipped",
+              "duration": 0
             }
           },
           {
@@ -244,7 +245,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 36731250
+              "duration": 794193709
             }
           }
         ],
@@ -263,7 +264,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 201296082
+              "duration": 1383753292
             }
           },
           {
@@ -276,7 +277,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4715562249
+              "duration": 5010519375
             }
           },
           {
@@ -289,7 +290,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3026713833
+              "duration": 3046544917
             }
           },
           {
@@ -302,7 +303,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3078960999
+              "duration": 3034884374
             }
           },
           {
@@ -315,7 +316,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3037424458
+              "duration": 3074618167
             }
           },
           {
@@ -328,7 +329,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 23085833292
+              "duration": 9149988666
             }
           },
           {
@@ -341,7 +342,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3037655499
+              "duration": 3054820542
             }
           },
           {
@@ -349,7 +350,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 26568833
+              "duration": 342754667
             }
           }
         ],
@@ -368,7 +369,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 180906250
+              "duration": 981078125
             }
           },
           {
@@ -381,7 +382,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4778241416
+              "duration": 4847918041
             }
           },
           {
@@ -394,7 +395,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3107252000
+              "duration": 3329043999
             }
           },
           {
@@ -407,7 +408,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3091840791
+              "duration": 3106024374
             }
           },
           {
@@ -420,7 +421,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3025215082
+              "duration": 3035686042
             }
           },
           {
@@ -433,7 +434,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3082545500
+              "duration": 3068810957
             }
           },
           {
@@ -446,7 +447,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3012501041
+              "duration": 3011334207
             }
           },
           {
@@ -454,7 +455,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 48859250
+              "duration": 347631000
             }
           }
         ],

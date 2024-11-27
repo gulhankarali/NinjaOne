@@ -4,7 +4,7 @@ import { Browser, BrowserContext, chromium, firefox, Page, webkit } from "playwr
 import fs from "fs";
 import { initElements } from "../../globalSetup";
 
-const BROWSER_TYPE: string = "chrome";
+const BROWSER_TYPE: string = process.env.BROWSER_TYPE as string;
 const HEADLESS_MODE: boolean = true;
 const MAXIMIZED_WINDOW: boolean = true;
 const SLOW_MOTION_DELAY: number = 0;

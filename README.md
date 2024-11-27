@@ -53,8 +53,7 @@ NinjaOne/
 ├── globalSetup.ts               # Playwright global setup
 ├── package.json                 # npm dependencies and scripts
 ├── tsconfig.json                # TypeScript configuration
-├── README.md                    # Project documentation
-└── pipeline.yml                 # GitHub Actions pipeline
+└── README.md                    # Project documentation
 ```
 
 ## Configuration
