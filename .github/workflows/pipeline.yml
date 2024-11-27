@@ -1,117 +1,3 @@
-# name: NinjaOne Playwright Tests
-
-# on:
-#   pull_request:
-#     branches:
-#       - main
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   test:
-#     runs-on: ubuntu-latest
-
-#     env:
-#       npm_config_cache: ${{ github.workspace }}/.npm-store
-#       npm_version: 9.5.0
-#       node_version: 20.x
-#       URL: ${{ secrets.URL }}
-#       USERNAME: ${{ secrets.USERNAME }}
-#       PASSWORD: ${{ secrets.PASSWORD }}
-#       INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
-#       SECRET: ${{ secrets.SECRET }}
-#       CI: "true"
-
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v3
-
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ env.node_version }}
-
-#       - name: Cache npm
-#         uses: actions/cache@v3
-#         with:
-#           path: ${{ env.npm_config_cache }}
-#           key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
-#           restore-keys: |
-#             ${{ runner.os }}-npm-
-
-#       - name: Setup npm
-#         run: |
-#           corepack enable
-#           corepack prepare npm@${{ env.npm_version }} --activate
-#         env:
-#           npm_version: ${{ env.npm_version }}
-
-#       - name: Install test dependencies
-#         run: npm install --frozen-lockfile
-
-#       - name: Install system dependencies
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y --fix-broken
-#           sudo apt-get install -y \
-#             libwebkit2gtk-4.0-37 \
-#             libatk-bridge2.0-0 \
-#             libgtk-3-0 \
-#             libasound2 \
-#             libgbm1
-
-#       - name: Install Playwright with dependencies
-#         run: npx playwright install --with-deps
-
-#       - name: Run Playwright Tests
-#         run: |
-#           mkdir -p junit-test-results
-#           report_file_path="junit-test-results/e2e-junit-results.xml"
-          
-#           npx cucumber-js \
-#             --format json:test-results.json \
-#             --require-module ts-node/register
-          
-#           if [ -f "test-results.json" ]; then
-#             npx cucumber-junit < test-results.json > "$report_file_path"
-#             chmod 755 "$report_file_path"
-#             echo "JUnit report file has been created."
-#           else
-#             echo "Cucumber JSON report file does not exist."
-#             exit 1
-#           fi
-#         env:
-#           URL: ${{ secrets.URL }}
-#           USERNAME: ${{ secrets.USERNAME }}
-#           PASSWORD: ${{ secrets.PASSWORD }}
-#           INVALID_USERNAME: ${{ secrets.INVALID_USERNAME }}
-#           SECRET: ${{ secrets.SECRET }}
-#           CI: "true"
-#         continue-on-error: true
-
-#       - name: Upload Test Results
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: junit-test-results
-#           path: junit-test-results/e2e-junit-results.xml
-
-#       - name: Upload Playwright Report
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: playwright-report
-#           path: playwright-report
-
-#       - name: Upload Playwright JSON Results
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: playwright-json-results
-#           path: test-results
-
-#       - name: Publish Test Results
-#         uses: EnricoMi/publish-unit-test-result-action@v2
-#         with:
-#           files: junit-test-results/e2e-junit-results.xml
 name: NinjaOne Playwright Tests
 
 on:
@@ -125,6 +11,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # needed for gh-pages deployment
 
     env:
       npm_config_cache: ${{ github.workspace }}/.npm-store
@@ -140,11 +28,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.node_version }}
+          cache: 'npm'
 
       - name: Cache npm
         uses: actions/cache@v3
@@ -182,11 +74,12 @@ jobs:
         run: |
           mkdir -p playwright-report
           mkdir -p reports
-          
+
           npx cucumber-js \
             --format json:reports/cucumber-report.json \
             --format html:reports/cucumber-report.html \
-            --require-module ts-node/register
+            --require-module ts-node/register \
+            --retry 2
         env:
           URL: ${{ secrets.URL }}
           USERNAME: ${{ secrets.USERNAME }}
@@ -203,6 +96,7 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 30
+          if-no-files-found: warn
 
       - name: Upload Cucumber Reports
         if: always()
@@ -211,11 +105,13 @@ jobs:
           name: cucumber-report
           path: reports/
           retention-days: 30
+          if-no-files-found: warn
 
-      - name: Deploy Report
+      - name: Deploy Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: reports
           destination_dir: reports/${{ github.run_number }}
+          keep_files: true
