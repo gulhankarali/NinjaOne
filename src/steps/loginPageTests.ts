@@ -4,6 +4,7 @@ import { loginPage, mfaPage, registerPage, resetPasswordPage } from "../../globa
 import { TOTPHelper } from "../helpers/googleAuth";
 import { CustomWorld } from "../hooks/globalHooks";
 import { FakerHelper } from "../helpers/fakerHelper";
+import { TIMEOUT } from "dns";
 
   Given('I am on the login page', async function () {
     await this.page.goto(process.env.URL as string);
@@ -70,8 +71,8 @@ import { FakerHelper } from "../helpers/fakerHelper";
     });
 
   
-  Then('I see account creation message on next page', async function () {
-      await new Promise(resolve => setTimeout(resolve, 10000))
+  Then('I see account creation message on next page', { TIMEOUT: 6000 }, async function () {
+      await new Promise(resolve => setTimeout(resolve, 3000))
       const successMessage = await registerPage.accountSuccessMessage.textContent(); 
       expect(successMessage?.trim()).toContain("Account successfully created. Please check your email to activate your account."); 
   });
