@@ -53,23 +53,13 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
+          sudo apt-get install -y --fix-broken
           sudo apt-get install -y \
-            libgstreamer1.0-0 \
-            gstreamer1.0-plugins-base \
-            gstreamer1.0-plugins-good \
-            gstreamer1.0-plugins-bad \
-            gstreamer1.0-plugins-ugly \
-            gstreamer1.0-libav \
-            libgstreamer-plugins-base1.0-0 \
-            libx264-dev \
             libwebkit2gtk-4.0-37 \
-            libegl1 \
-            libopus0 \
-            libwoff1 \
-            libharfbuzz-icu0 \
-            libgstreamer-gl1.0-0 \
-            libgstreamer-plugins-base1.0-dev \
-            libgstreamer1.0-dev
+            libatk-bridge2.0-0 \
+            libgtk-3-0 \
+            libasound2 \
+            libgbm1
 
       - name: Install Playwright with dependencies
         run: npx playwright install --with-deps
@@ -120,3 +110,9 @@ jobs:
         with:
           name: playwright-json-results
           path: test-results
+
+      - name: Publish Test Results
+        if: always()
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          files: junit-test-results/e2e-junit-results.xml
