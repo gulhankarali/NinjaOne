@@ -1,93 +1,89 @@
-name: ninjaone-test
+name: NinjaOne Playwright Tests
 
-trigger: none
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
 
-pr:
-  - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
 
-pool:
-  vmImage: ubuntu-latest
+    env:
+      npm_config_cache: ${{ github.workspace }}/.npm-store
+      npm_version: 9.5.0
+      node_version: 20.x
+      URL: ${{ secrets.URL }}
+      USERNAME: ${{ secrets.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+      CI: "true"
 
-variables:
-  npm_config_cache: $(Pipeline.Workspace)/.npm-store
-  npm_version: 9.5.0
-  node_version: 20.x
-  ui_app_url: ""
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-resources:
-  pipelines:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.node_version }}
 
-stages:
-  - stage: Test
-    jobs:
-      - job: RunPlaywrightTests
-        steps:
-          - task: NodeTool@0
-            inputs:
-              versionSpec: "$(node_version)"
-            displayName: "Install Node.js"
+      - name: Cache npm
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.npm_config_cache }}
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
-          - task: Cache@2
-            inputs:
-              key: 'npm | "$(Agent.OS)" | package-lock.yaml'
-              path: $(npm_config_cache)
-            displayName: Cache npm
+      - name: Setup npm
+        run: |
+          cd test
+          corepack enable
+          corepack prepare npm@${{ env.npm_version }} --activate
+          npm config set store-dir ${{ env.npm_config_cache }}
 
-          - script: |
-              cd test
-              corepack enable
-              corepack prepare npm@$(npm_version) --activate
-              npm config set store-dir $(npm_config_cache)
-            displayName: "Setup npm"
+      - name: Install test dependencies
+        run: |
+          cd test
+          npm install --filter=tests --frozen-lockfile
 
-          - script: |
-              cd test
-              npm install --filter=tests --frozen-lockfile
-            displayName: "Install test dependencies"
+      - name: Run Playwright Tests
+        run: |
+          cd test
+          mkdir -p junit-test-results
+          report_file_path="junit-test-results/e2e-junit-results.xml"
 
-          - script: |
-              cd test
-              mkdir -p junit-test-results
-              report_file_path="junit-test-results/e2e-junit-results.xml"
-             
-              PLAYWRIGHT_JUNIT_OUTPUT_FILE=$report_file_path npx playwright test --reporter=junit --timeout=120000 --trace on
+          PLAYWRIGHT_JUNIT_OUTPUT_FILE=$report_file_path npx playwright test \
+            --reporter=junit \
+            --timeout=120000 \
+            --trace on
 
-              if [ -f "$report_file_path" ]; then
-                chmod 755 "$report_file_path"
-                echo "Report file has been created."
-              else
-                echo "JUnit report file does not exist."
-              fi
-            env:
-              BASE_URL: $(ui_app_url)
-              USERNAME: $(USERNAME)
-              PASSWORD: $(PASSWORD)
-              CI: "true"
-            displayName: "Run Playwright Tests"
-            continueOnError: true
-          - task: PublishTestResults@2
-            displayName: "Publish test results"
-            inputs:
-              searchFolder: "test/junit-test-results"
-              testResultsFormat: "JUnit"
-              testResultsFiles: "e2e-junit-results.xml"
-              mergeTestResults: true
-              failTaskOnFailedTests: true
-              testRunTitle: "Run Playwright Tests"
-            condition: succeededOrFailed()
+          if [ -f "$report_file_path" ]; then
+            chmod 755 "$report_file_path"
+            echo "Report file has been created."
+          else
+            echo "JUnit report file does not exist."
+            exit 1
+          fi
+        continue-on-error: true
 
-          - task: PublishPipelineArtifact@1
-            displayName: "Publish playwright test results"
-            inputs:
-              targetPath: test/playwright-report
-              artifact: playwright-report
-              publishLocation: "pipeline"
-            condition: succeededOrFailed()
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: junit-test-results
+          path: test/junit-test-results/e2e-junit-results.xml
 
-          - task: PublishPipelineArtifact@1
-            displayName: "Publish Playwright JSON Results"
-            inputs:
-              targetPath: test/test-results
-              artifact: "Playwright JSON Results"
-              publishLocation: "pipeline"
-            condition: succeededOrFailed()
+      - name: Upload Playwright Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: test/playwright-report
+
+      - name: Upload Playwright JSON Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-json-results
+          path: test/test-results
