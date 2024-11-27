@@ -39,10 +39,11 @@ jobs:
             ${{ runner.os }}-npm-
 
       - name: Setup npm
-        run: |
+          run: |
           corepack enable
           corepack prepare npm@${{ env.npm_version }} --activate
-          npm config set store-dir ${{ env.npm_config_cache }}
+        env:
+          npm_version: ${{ env.npm_version }}
 
       - name: Install test dependencies
         run: |
