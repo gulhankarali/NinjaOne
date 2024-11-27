@@ -51,12 +51,15 @@ jobs:
       - name: Run Playwright Tests
         run: |
           mkdir -p junit-test-results
-          report_file_path="junit-test-results/e2e-junit-results.xml"
-
-          PLAYWRIGHT_JUNIT_OUTPUT_FILE=$report_file_path npx cucumber-js \
-            --reporter=junit \
-            --timeout=120000 \
-            --trace on
+          npx cucumber-js --format json:test-results.json --require-module ts-node/register
+          if [ -f "test-results.json" ]; then
+            npx cucumber-junit < test-results.json > junit-test-results/e2e-junit-results.xml
+            chmod 755 junit-test-results/e2e-junit-results.xml
+            echo "JUnit report file has been created."
+          else
+              echo "Cucumber JSON report file does not exist."
+              exit 1
+          fi
 
           if [ -f "$report_file_path" ]; then
             chmod 755 "$report_file_path"
