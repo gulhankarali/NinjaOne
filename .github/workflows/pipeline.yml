@@ -74,12 +74,15 @@ jobs:
         run: |
           mkdir -p playwright-report
           mkdir -p reports
-
+          
           npx cucumber-js \
             --format json:reports/cucumber-report.json \
             --format html:reports/cucumber-report.html \
             --require-module ts-node/register \
-            --retry 2
+            --retry 2 \
+            --format @cucumber/pretty-formatter \
+            --format html:playwright-report/index.html
+
         env:
           URL: ${{ secrets.URL }}
           USERNAME: ${{ secrets.USERNAME }}
