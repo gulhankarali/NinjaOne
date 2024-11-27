@@ -40,19 +40,16 @@ jobs:
 
       - name: Setup npm
         run: |
-          cd test
           corepack enable
           corepack prepare npm@${{ env.npm_version }} --activate
           npm config set store-dir ${{ env.npm_config_cache }}
 
       - name: Install test dependencies
         run: |
-          cd test
-          npm install --filter=tests --frozen-lockfile
+          npm instal --frozen-lockfile
 
       - name: Run Playwright Tests
         run: |
-          cd test
           mkdir -p junit-test-results
           report_file_path="junit-test-results/e2e-junit-results.xml"
 
