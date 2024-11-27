@@ -51,26 +51,26 @@ jobs:
         run: npm install --frozen-lockfile
 
       - script: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          libgstreamer1.0-0 \
-          gstreamer1.0-plugins-base \
-          gstreamer1.0-plugins-good \
-          gstreamer1.0-plugins-bad \
-          gstreamer1.0-plugins-ugly \
-          gstreamer1.0-libav \
-          libgstreamer-plugins-base1.0-0 \
-          libx264-dev \
-          libwebkit2gtk-4.0-37 \
-          libegl1 \
-          libopus0 \
-          libwoff1 \
-          libharfbuzz-icu0 \
-          libgstreamer-gl1.0-0 \
-          libgstreamer-plugins-base1.0-dev \
-          libgstreamer1.0-dev
-      displayName: "Install system dependencies"
-      
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgstreamer1.0-0 \
+            gstreamer1.0-plugins-base \
+            gstreamer1.0-plugins-good \
+            gstreamer1.0-plugins-bad \
+            gstreamer1.0-plugins-ugly \
+            gstreamer1.0-libav \
+            libgstreamer-plugins-base1.0-0 \
+            libx264-dev \
+            libwebkit2gtk-4.0-37 \
+            libegl1 \
+            libopus0 \
+            libwoff1 \
+            libharfbuzz-icu0 \
+            libgstreamer-gl1.0-0 \
+            libgstreamer-plugins-base1.0-dev \
+            libgstreamer1.0-dev
+        displayName: "Install system dependencies"
+        
     - script: |
         npx playwright install --with-deps
       displayName: "Install Playwright Browsers with dependencies"
