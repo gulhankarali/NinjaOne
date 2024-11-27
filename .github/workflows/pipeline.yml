@@ -181,8 +181,8 @@ jobs:
       - name: Run Playwright Tests
         run: |
           npx cucumber-js \
-            --format @cucumber/pretty-formatter \
-            --format json:test-results.json \
+            --format json:reports/cucumber-report.json \
+            --format html:reports/cucumber-report.html \
             --require-module ts-node/register
         env:
           URL: ${{ secrets.URL }}
@@ -201,19 +201,18 @@ jobs:
           path: playwright-report
           retention-days: 30
 
-      - name: Upload Test Results
+      - name: Upload Cucumber Reports
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: cucumber-report
-          path: test-results.json
+          path: reports/
           retention-days: 30
 
-      - name: Test Report
+      - name: Deploy Report
         if: always()
-        uses: dorny/test-reporter@v1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: Cucumber Tests
-          path: test-results.json
-          reporter: cucumber-json
-          fail-on-error: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: reports
+          destination_dir: reports/${{ github.run_number }}
