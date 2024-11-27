@@ -53,7 +53,7 @@ jobs:
           mkdir -p junit-test-results
           report_file_path="junit-test-results/e2e-junit-results.xml"
 
-          PLAYWRIGHT_JUNIT_OUTPUT_FILE=$report_file_path npx playwright test \
+          PLAYWRIGHT_JUNIT_OUTPUT_FILE=$report_file_path npx cucumber-js \
             --reporter=junit \
             --timeout=120000 \
             --trace on
