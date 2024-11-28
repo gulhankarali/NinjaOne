@@ -4,111 +4,6 @@
     "elements": [
       {
         "description": "",
-        "id": "login-page-testing;login-fails-with-an-invalid-email-(negative-test)",
-        "keyword": "Scenario",
-        "line": 14,
-        "name": "Login fails with an invalid email (negative test)",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 882367205
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 15,
-            "name": "I am on the login page",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:9"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3633065721
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 16,
-            "name": "I enter an invalid email",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:97"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3032499071
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 17,
-            "name": "I enter a valid password",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:33"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3013786081
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 18,
-            "name": "I click submit button",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:43"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3133967999
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 19,
-            "name": "I should see an error message",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:103"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3007353371
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 20,
-            "name": "I should remain on the login page",
-            "match": {
-              "location": "src/steps/loginPageTests.ts:111"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 3002845860
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 25997434
-            }
-          }
-        ],
-        "tags": [],
-        "type": "scenario"
-      },
-      {
-        "description": "",
         "id": "login-page-testing;successful-login-with-\"remember-me\"-checked",
         "keyword": "Scenario",
         "line": 3,
@@ -119,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 103627907
+              "duration": 408643472
             }
           },
           {
@@ -132,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3543227894
+              "duration": 3918208431
             }
           },
           {
@@ -145,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3026165628
+              "duration": 3029074319
             }
           },
           {
@@ -158,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3010653595
+              "duration": 3010936473
             }
           },
           {
@@ -171,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3036848603
+              "duration": 3047049187
             }
           },
           {
@@ -184,7 +79,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3034706317
+              "duration": 3033393824
             }
           },
           {
@@ -197,7 +92,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6050795638
+              "duration": 21075479505
             }
           },
           {
@@ -209,9 +104,8 @@
               "location": "src/steps/loginPageTests.ts:48"
             },
             "result": {
-              "status": "failed",
-              "duration": 8001317295,
-              "error_message": "Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)\n\nLocator: locator(':root')\nExpected string: \"Get started | NinjaOne\"\nReceived string: \"NinjaOne\"\nCall log:\n  - locator._expect with timeout 5000ms\n  - waiting for locator(':root')\n    9 × locator resolved to <html lang=\"en\">…</html>\n      - unexpected value \"NinjaOne\"\n\n    at Proxy.<anonymous> (/home/runner/work/NinjaOne/NinjaOne/node_modules/playwright/lib/matchers/expect.js:227:37)\n    at CustomWorld.<anonymous> (/home/runner/work/NinjaOne/NinjaOne/src/steps/loginPageTests.ts:50:29)"
+              "status": "passed",
+              "duration": 3020298335
             }
           },
           {
@@ -223,8 +117,8 @@
               "location": "src/steps/loginPageTests.ts:84"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 3087546100
             }
           },
           {
@@ -236,8 +130,8 @@
               "location": "src/steps/loginPageTests.ts:91"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 3014881980
             }
           },
           {
@@ -245,7 +139,112 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 109229164
+              "duration": 30740461
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-testing;login-fails-with-an-invalid-email-(negative-test)",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Login fails with an invalid email (negative test)",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 399177265
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "I am on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3937492590
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 16,
+            "name": "I enter an invalid email",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3030748961
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter a valid password",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3013104981
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click submit button",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3036283428
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should see an error message",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:103"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3006921454
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "I should remain on the login page",
+            "match": {
+              "location": "src/steps/loginPageTests.ts:111"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3003173048
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 26545480
             }
           }
         ],
@@ -264,7 +263,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 100866813
+              "duration": 86903173
             }
           },
           {
@@ -277,7 +276,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3552513556
+              "duration": 3864819915
             }
           },
           {
@@ -290,7 +289,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3030317006
+              "duration": 3026637093
             }
           },
           {
@@ -303,7 +302,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3008598417
+              "duration": 3011030599
             }
           },
           {
@@ -316,7 +315,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3049510248
+              "duration": 3020853837
             }
           },
           {
@@ -329,7 +328,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9048617490
+              "duration": 5061044668
             }
           },
           {
@@ -341,9 +340,8 @@
               "location": "src/steps/loginPageTests.ts:48"
             },
             "result": {
-              "status": "failed",
-              "duration": 8002914745,
-              "error_message": "Error: Timed out 5000ms waiting for expect(locator).toHaveTitle(expected)\n\nLocator: locator(':root')\nExpected string: \"Get started | NinjaOne\"\nReceived string: \"NinjaOne\"\nCall log:\n  - locator._expect with timeout 5000ms\n  - waiting for locator(':root')\n    9 × locator resolved to <html lang=\"en\">…</html>\n      - unexpected value \"NinjaOne\"\n\n    at Proxy.<anonymous> (/home/runner/work/NinjaOne/NinjaOne/node_modules/playwright/lib/matchers/expect.js:227:37)\n    at CustomWorld.<anonymous> (/home/runner/work/NinjaOne/NinjaOne/src/steps/loginPageTests.ts:50:29)"
+              "status": "passed",
+              "duration": 3017892784
             }
           },
           {
@@ -351,7 +349,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 100507712
+              "duration": 23892999
             }
           }
         ],
@@ -370,7 +368,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 95318803
+              "duration": 88907140
             }
           },
           {
@@ -383,7 +381,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3542609316
+              "duration": 3877641842
             }
           },
           {
@@ -396,7 +394,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3056170255
+              "duration": 3052050617
             }
           },
           {
@@ -409,7 +407,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3067328901
+              "duration": 3068421811
             }
           },
           {
@@ -422,7 +420,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3013311571
+              "duration": 3012890038
             }
           },
           {
@@ -435,7 +433,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3074502831
+              "duration": 3073004543
             }
           },
           {
@@ -448,7 +446,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3005525389
+              "duration": 3005008295
             }
           },
           {
@@ -456,7 +454,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 22012141
+              "duration": 41030739
             }
           }
         ],
